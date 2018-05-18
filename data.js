@@ -73,8 +73,8 @@ module.exports.personas = {
 
 module.exports.tasks = {
   'Markin\' the law': {
-    task: '',
-    taskDescription: '',
+    name: 'Markin\' the law',
+    taskDescription: 'When good things happen, people get richer, people will want to steal things too. Give the established law enforcers a place to eat donuts, however be aware that not everyone will be happy with this new building.',
     resultDescription: '',
     scores: {
       security: 30,
@@ -87,8 +87,8 @@ module.exports.tasks = {
     currentValue: 0
   },
   'I want to believe': {
-    task: '',
-    taskDescription: '',
+    name: 'I want to believe',
+    taskDescription: 'Prayer is rumored to have a healing property so there might be something to say for a religious building. No one really knows what the religion of the Minicipalitans is but not everyone is in favor of it nonetheless...',
     resultDescription: '',
     scores: {
       security: -20,
@@ -101,8 +101,8 @@ module.exports.tasks = {
     currentValue: 0
   },
   'A perfect stranger': {
-    task: '',
-    taskDescription: '',
+    name: 'A perfect stranger',
+    taskDescription: 'Now that the citizens of the Minicipality have a pretty okay life it is time to give back. A refugee center will help other people to be safe. You will have to sacrifice some of the trees to build the enormous building though.',
     resultDescription: '',
     scores: {
       security: 0,
@@ -115,8 +115,8 @@ module.exports.tasks = {
     currentValue: 0
   },
   'www.buymystuffnow.com': {
-    task: '',
-    taskDescription: '',
+    name: 'www.buymystuffnow.com',
+    taskDescription: 'More things to do and more things to sell, sell, sell. Whatever it is; a petrock, your limited DVD of the Avengers (now retro) or the ashes of your great-aunt Frida you can see it online to someone else!',
     resultDescription: '',
     scores: {
       security: 10,
@@ -129,8 +129,8 @@ module.exports.tasks = {
     currentValue: 0
   },
   'Let the sun shine!': {
-    task: '',
-    taskDescription: '',
+    name: 'Let the sun shine!',
+    taskDescription: 'Get the D, the vitamin D! The sun is shining bright and while it is good for us, we can do more with it. We have to add solar panels to the buildings even if it is expensive, right?',
     resultDescription: '',
     scores: {
       security: 0,

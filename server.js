@@ -7,8 +7,8 @@ const deepcopy = require("deepcopy");
 
 const data = require('./data')
 const gameState = {
-  task1: '',
-  task2: '',
+  task1: getRamdomTask(),
+  task2: getRamdomTask(),
   scores: {
     security: 50,
     nature: 50,
@@ -29,6 +29,16 @@ function getRamdomPersona() {
   return result;
 }
 
+function getRamdomTask() {
+  let count = 0;
+  for (let prop in data.tasks) {
+    if (Math.random() < 1 / ++count) {
+      result = prop;
+    }
+  }
+  return result;
+}
+
 app.use(express.static('public'));
 app.set("views", path.join(__dirname, "views"));
 app.set('view engine', 'ejs');
@@ -41,9 +51,9 @@ io.on('connection', (socket) => {
   console.log("connection");
   socket.persona = deepcopy(data.personas[getRamdomPersona()]);
   socket.emit('displayPersona', socket.persona)
+  socket.emit('displayTasks', gameState)
   socket.emit("onCityScoreUpdate_s", gameState.scores);
   socket.on("onMakeCardChoice", function (choice) {
-
   });
 
 });

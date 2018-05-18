@@ -42,6 +42,14 @@ window.addEventListener("load", function () {
     document.getElementById('user-culture').innerHTML = persona.scores.culture;
     document.getElementById('user-money').innerHTML = persona.scores.money;
     document.getElementById('user-social').innerHTML = persona.scores.social;
+  })
 
+  socket.on('displayTasks', function (data) {
+    const task1 = document.getElementById('task1');
+    const task2 = document.getElementById('task2');
+    task1.querySelector('h4').innerHTML = data.task1.name;
+    task2.querySelector('h4').innerHTML = data.task2.name;
+    task1.querySelector('p').innerHTML = data.task1.taskDescription;
+    task2.querySelector('p').innerHTML = data.task2.taskDescription;
   })
 });
