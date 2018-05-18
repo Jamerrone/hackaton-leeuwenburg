@@ -51,7 +51,7 @@ io.on('connection', (socket) => {
   console.log("connection");
   socket.persona = deepcopy(data.personas[getRamdomPersona()]);
   socket.emit('displayPersona', socket.persona)
-  socket.emit('displayTasks', gameState)
+  socket.emit('displayTasks', {task1: data.tasks[gameState.task1], task2: data.tasks[gameState.task1]})
   socket.emit("onCityScoreUpdate_s", gameState.scores);
 
   socket.on("onMakeCardChoice_c", function (cardIndex, energy) {
