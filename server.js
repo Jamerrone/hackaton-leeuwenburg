@@ -5,23 +5,33 @@ const http = require('http').Server(app);
 const io = require('socket.io')(http);
 const deepcopy = require("deepcopy");
 
-const data = deepcopy(require('./data'));
+const data = require('./data')
 const gameState = {
-  task1: '',
-  task2: '',
+  task1: getRamdomTask(),
+  task2: getRamdomTask(),
   scores: {
     security: 50,
     nature: 50,
     culture: 50,
     money: 50,
     social: 50,
-  }
+  },
 }
 
 function getRamdomPersona() {
   let result;
   let count = 0;
   for (let prop in data.personas) {
+    if (Math.random() < 1 / ++count) {
+      result = prop;
+    }
+  }
+  return result;
+}
+
+function getRamdomTask() {
+  let count = 0;
+  for (let prop in data.tasks) {
     if (Math.random() < 1 / ++count) {
       result = prop;
     }
@@ -40,13 +50,12 @@ app.get('/', (req, res, next) => {
 io.on('connection', (socket) => {
   console.log("connection");
   socket.persona = deepcopy(data.personas[getRamdomPersona()]);
-  socket.emit('displayPersona', socket.persona);
+  socket.emit('displayPersona', socket.persona)
+  socket.emit('displayTasks', gameState)
   socket.emit("onCityScoreUpdate_s", gameState.scores);
-
-  // User makes a chard choice
   socket.on("onMakeCardChoice", function (cardIndex, energy) {
     cardIndex = Number(cardIndex);
-    
+
     let cardName;
     if (cardIndex === 0) {
       cardName = gameState.task1;
@@ -60,7 +69,6 @@ io.on('connection', (socket) => {
       socket.emit('onEnergyChange_s', energy);
     }
   });
-
 });
 
 http.listen(3000, () => console.log('http://localhost:3000'));
