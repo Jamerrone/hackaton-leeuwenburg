@@ -54,7 +54,7 @@ window.addEventListener('load', function () {
   })
 
   document.getElementsByTagName('form')[0].addEventListener('submit', function (e) {
-
+    e.preventDefault();
     const selectedElement = this.querySelector(':checked');
     if (selectedElement != undefined) {
       const value = selectedElement.value;
@@ -62,13 +62,14 @@ window.addEventListener('load', function () {
       const energy = Number(this.querySelector("[name=\"energyAmount\"]").value);
       if (energy != undefined && energy != "" && energy > 0) {
         console.log(energy);
-        socket.emit('onMakeCardChoice', value, energy);
+        socket.emit('onMakeCardChoice_c', value, energy);
       }
     }
     e.preventDefault();
   });
 
   socket.on('onEnergyChange_s', function (energy) {
+    console.log("onEnergyChange_s");
     document.getElementById('user-energy').textContent = energy;
   });
 });

@@ -53,7 +53,9 @@ io.on('connection', (socket) => {
   socket.emit('displayPersona', socket.persona)
   socket.emit('displayTasks', gameState)
   socket.emit("onCityScoreUpdate_s", gameState.scores);
-  socket.on("onMakeCardChoice", function (cardIndex, energy) {
+
+  socket.on("onMakeCardChoice_c", function (cardIndex, energy) {
+    console.log("onMakeCardChoice_c");
     cardIndex = Number(cardIndex);
 
     let cardName;
@@ -66,6 +68,7 @@ io.on('connection', (socket) => {
       console.log(cardIndex, cardName)
       socket.persona.energy -= energy; // remove energy from the persona
       data.tasks[cardName].currentValue += energy; // add energy to the current task.
+      console.log("onEnergyChange_s")
       socket.emit('onEnergyChange_s', energy);
     }
   });
