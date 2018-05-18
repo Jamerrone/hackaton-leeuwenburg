@@ -30,6 +30,7 @@ function getRamdomPersona() {
 }
 
 function getRamdomTask() {
+  let result;
   let count = 0;
   for (let prop in data.tasks) {
     if (Math.random() < 1 / ++count) {
