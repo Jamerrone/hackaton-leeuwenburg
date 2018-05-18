@@ -1,42 +1,60 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Game</title>
-</head>
-<body>
-    <main>
-        <form>
-            <fieldset required>
-                <input type="radio" name="cards" value="0">Card 1</input>
-                <input type="radio" name="cards" value="1">Card 2</input>
-            </fieldset>
-        </form>
-        <section id="city-score">
-            <ul>
-                <li id="security">
-                    <img src="" alt="Icon">
-                    <p>0</p>
-                </li>
-                <li id="nature">
-                    <img src="" alt="Icon">
-                    <p>0</p>
-                </li>
-                <li id="money">
-                    <img src="" alt="Icon">
-                    <p>0</p>
-                </li>
-                <li id="social">
-                    <img src="" alt="Icon">
-                    <p>0</p>
-                </li>
-            </ul>
-        </section>
 
-    </main>
-    <script src="/socket.io/socket.io.js"></script>
-    <script src="/js/main.js"></script>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Game</title>
+</head>
+
+<body>
+  <main>
+    <section id="user-persona">
+      <ul>
+        <li>Username: <span id="user-name"></span></li>
+        <li>Energy: <span id="user-energy"></span></li>
+        <li>
+          <ul>
+              <li>Security: <span id="user-security"></span></li>
+              <li>Nature: <span id="user-nature"></span></li>
+              <li>Culture: <span id="user-culture"></span></li>
+              <li>Money: <span id="user-money"></span></li>
+              <li>Social: <span id="user-social"></span></li>
+          </ul>
+        </li>
+      </ul>
+    </section>
+    <form>
+        <fieldset required>
+            <input type="radio" name="cards" value="0">Card 1</input>
+            <input type="radio" name="cards" value="1">Card 2</input>
+        </fieldset>
+    </form>
+    <section id="city-score">
+      <ul>
+        <li id="security">
+          <img src="" alt="Icon">
+          <p>50</p>
+        </li>
+        <li id="nature">
+          <img src="" alt="Icon">
+          <p>50</p>
+        </li>
+        <li id="money">
+          <img src="" alt="Icon">
+          <p>50</p>
+        </li>
+        <li id="social">
+          <img src="" alt="Icon">
+          <p>50</p>
+        </li>
+      </ul>
+    </section>
+
+  </main>
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="/js/main.js"></script>
 </body>
+
 </html>
