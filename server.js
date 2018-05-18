@@ -69,7 +69,7 @@ io.on('connection', (socket) => {
       socket.persona.energy -= energy; // remove energy from the persona
       data.tasks[cardName].currentValue += energy; // add energy to the current task.
       console.log("onEnergyChange_s")
-      socket.emit('onEnergyChange_s', energy);
+      socket.emit('onEnergyChange_s', socket.persona.energy);
     }
   });
 });
