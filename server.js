@@ -17,16 +17,28 @@ const gameState = {
   },
 }
 
+function getRamdomPersona() {
+  let result;
+  let count = 0;
+  for (let prop in data.personas) {
+    if (Math.random() < 1 / ++count) {
+      result = prop;
+    }
+  }
+  return result;
+}
+
 app.use(express.static('public'));
 app.set("views", path.join(__dirname, "views"));
 app.set('view engine', 'ejs');
 
 app.get('/', (req, res, next) => {
-    res.render("pages/index");
+  res.render("pages/index");
 });
 
 io.on('connection', (socket) => {
-
+  socket.persona = getRamdomPersona();
+  console.log(socket.persona);
 });
 
 http.listen(3000, () => console.log('http://localhost:3000'));
