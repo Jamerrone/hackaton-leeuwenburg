@@ -23,13 +23,12 @@ window.addEventListener("load", function () {
 
 
   socket.on("onCityScoreUpdate_s", function (scores) {
-
     for (const scoreId in scores) {
       const value = scores[scoreId];
 
       const container = document.getElementById(scoreId);
       if (container != undefined) {
-        container.getElementsByTagName("p")[0] = value;
+        container.getElementsByTagName("p")[0].textContent = value;
       }
     }
 
