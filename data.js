@@ -1,5 +1,6 @@
 module.exports.personas = {
   'Ellen Who': {
+    name: 'Ellen Who',
     quote: '',
     description: '',
     happiness: 6, // 0-6
@@ -13,6 +14,7 @@ module.exports.personas = {
     }
   },
   'Greet de Jong': {
+    name: 'Greet de Jong',
     quote: '',
     description: '',
     happiness: 6, // 0-6
@@ -26,6 +28,7 @@ module.exports.personas = {
     }
   },
   'Brad Tipp': {
+    name: 'Brad Tipp',
     quote: '',
     description: '',
     happiness: 6, // 0-6
@@ -39,6 +42,7 @@ module.exports.personas = {
     }
   },
   'Ping Lee': {
+    name: 'Ping Lee',
     quote: '',
     description: '',
     happiness: 6, // 0-6
@@ -52,6 +56,7 @@ module.exports.personas = {
     }
   },
   'Naru Muhammadu': {
+    name: 'Naru Muhammadu',
     quote: '',
     description: '',
     happiness: 6, // 0-6

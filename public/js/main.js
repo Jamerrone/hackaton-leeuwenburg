@@ -34,4 +34,8 @@ window.addEventListener("load", function () {
     }
 
   });
+
+  socket.on('displayPersona', function (persona) {
+
+  })
 });
