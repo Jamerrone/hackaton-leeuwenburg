@@ -38,7 +38,9 @@ app.get('/', (req, res, next) => {
 
 io.on('connection', (socket) => {
   socket.persona = getRamdomPersona();
-  console.log(socket.persona);
+  socket.emit("onCityScoreUpdate_s", scores);
+  socket.on("onMakeCardChoice", function (choice) {
+  });
 });
 
 http.listen(3000, () => console.log('http://localhost:3000'));

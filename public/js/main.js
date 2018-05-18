@@ -22,14 +22,14 @@ window.addEventListener("load", function () {
   });
 
 
-  socket.on("onCityScore_s", function (scoreUpdate) {
-    const characteristics = scoreUpdate.characteristics;
-    for (const key in characteristics) {
-      const characteristicValue = characteristics[key];
+  socket.on("onCityScoreUpdate_s", function (scores) {
 
-      const container = document.getElementById(key);
+    for (const scoreId in scores) {
+      const value = scores[scoreId];
+
+      const container = document.getElementById(scoreId);
       if (container != undefined) {
-        container.getElementsByTagName("p")[0] = characteristicValue;
+        container.getElementsByTagName("p")[0] = value;
       }
     }
 
