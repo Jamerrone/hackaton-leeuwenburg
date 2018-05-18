@@ -42,7 +42,9 @@ io.on('connection', (socket) => {
   socket.emit('displayPersona', socket.persona)
   socket.emit("onCityScoreUpdate_s", gameState.scores);
   socket.on("onMakeCardChoice", function (choice) {
+
   });
+
 });
 
 http.listen(3000, () => console.log('http://localhost:3000'));
