@@ -3,6 +3,7 @@ const path = require("path");
 const app = express();
 const http = require('http').Server(app);
 const io = require('socket.io')(http);
+const deepcopy = require("deepcopy");
 
 const data = require('./data')
 const gameState = {
@@ -38,7 +39,7 @@ app.get('/', (req, res, next) => {
 
 io.on('connection', (socket) => {
   console.log("connection");
-  socket.persona = data.personas[getRamdomPersona()];
+  socket.persona = deepcopy(data.personas[getRamdomPersona()]);
   socket.emit('displayPersona', socket.persona)
   socket.emit("onCityScoreUpdate_s", gameState.scores);
   socket.on("onMakeCardChoice", function (choice) {
