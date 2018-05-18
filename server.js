@@ -6,8 +6,8 @@ const io = require('socket.io')(http);
 
 const data = require('./data')
 const gameState = {
-  task1 = '',
-  task2 = '',
+  task1: '',
+  task2: '',
   scores: {
     security: 50,
     nature: 50,
