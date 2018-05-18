@@ -38,9 +38,9 @@ app.get('/', (req, res, next) => {
 
 io.on('connection', (socket) => {
   console.log("connection");
+  socket.persona = data.personas[getRamdomPersona()];
   socket.emit("onCityScoreUpdate_s", gameState.scores);
   socket.on("onMakeCardChoice", function (choice) {
-  
   });
 });
 
