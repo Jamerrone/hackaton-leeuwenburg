@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/Jamerrone/hackaton-leeuwenburg#readme",
   "dependencies": {
+    "ejs": "^2.6.1",
     "express": "^4.16.3",
     "path": "^0.12.7",
     "socket.io": "^2.1.1"
