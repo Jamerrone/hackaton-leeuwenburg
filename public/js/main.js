@@ -51,7 +51,11 @@ window.addEventListener('load', function () {
     if (selectedElement != undefined) {
       const value = selectedElement.value;
       console.log('on card click', value);
-      socket.emit('onMakeCardChoice', value, 2)
+      const energy = Number(this.querySelector("[name=\"energyAmount\"]").value);
+      if (energy != undefined && energy != "" && energy > 0) {
+        console.log(energy);
+        socket.emit('onMakeCardChoice', value, energy);
+      }
     }
     e.preventDefault();
   });
