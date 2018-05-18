@@ -27,12 +27,9 @@ app.get('/', (req, res, next) => {
 
 io.on('connection', (socket) => {
     socket.emit("onCityScoreUpdate_s", scores);
-<<<<<<< HEAD
-=======
     socket.on("onMakeCardChoice", function (choice) {
         
     });
->>>>>>> server-side-communication
 });
 
 http.listen(3000, () => console.log('http://localhost:3000'));
