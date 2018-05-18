@@ -36,6 +36,13 @@ window.addEventListener("load", function () {
   });
 
   socket.on('displayPersona', function (persona) {
+    document.getElementById('user-name').innerHTML = persona.name;
+    document.getElementById('user-energy').innerHTML = persona.energy;
+    document.getElementById('user-security').innerHTML = persona.scores.security;
+    document.getElementById('user-nature').innerHTML = persona.scores.nature;
+    document.getElementById('user-culture').innerHTML = persona.scores.culture;
+    document.getElementById('user-money').innerHTML = persona.scores.money;
+    document.getElementById('user-social').innerHTML = persona.scores.social;
 
   })
 });
