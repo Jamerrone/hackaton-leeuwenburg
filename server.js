@@ -37,17 +37,10 @@ app.get('/', (req, res, next) => {
 });
 
 io.on('connection', (socket) => {
-<<<<<<< HEAD
-  socket.persona = getRamdomPersona();
-  socket.emit("onCityScoreUpdate_s", scores);
-  socket.on("onMakeCardChoice", function (choice) {
-  });
-=======
     socket.emit("onCityScoreUpdate_s", gameState.scores);
     socket.on("onMakeCardChoice", function (choice) {
         
     });
->>>>>>> server-side-communication
 });
 
 http.listen(3000, () => console.log('http://localhost:3000'));
