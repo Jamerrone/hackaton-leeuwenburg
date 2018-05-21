@@ -72,4 +72,5 @@ window.addEventListener('load', function () {
     console.log("onEnergyChange_s");
     document.getElementById('user-energy').textContent = energy;
   });
+
 });

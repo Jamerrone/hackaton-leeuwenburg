@@ -70,6 +70,15 @@ io.on('connection', (socket) => {
       data.tasks[cardName].currentValue += energy; // add energy to the current task.
       console.log("onEnergyChange_s")
       socket.emit('onEnergyChange_s', socket.persona.energy);
+     
+      gameState.scores.security += data.tasks[cardName].scores.security;
+      gameState.scores.nature += data.tasks[cardName].scores.nature;
+      gameState.scores.culture += data.tasks[cardName].scores.culture;
+      gameState.scores.money += data.tasks[cardName].scores.money;
+      gameState.scores.social += data.tasks[cardName].scores.social;
+
+      console.log(data.tasks[cardName].scores.security);
+      socket.emit("onCityScoreUpdate_s", gameState.scores);
     }
   });
 });
